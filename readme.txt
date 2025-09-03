@@ -1,0 +1,1 @@
+'select f.feedback_id, f.userId, f.title, f.content, f.created_at,datediff(date(now()), date(created_at)) as days_ago,a.analysisId,a.pose,a.cofidence,a.facial,a.risk_responese,a.tone,a.understandingfrom feedback as f,analysis as a where feedback.feedback_id=analysis.feedback_id and userId= ? ORDER BY created_at DESC LIMIT 1';
